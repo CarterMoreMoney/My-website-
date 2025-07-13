@@ -1,6 +1,9 @@
-// Toggle Menu on Mobile
-document.getElementById("menu-toggle").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("show");
+// Toggle Mobile Menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
 });
 
 // Smooth Scroll
