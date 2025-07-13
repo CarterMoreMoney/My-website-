@@ -10,28 +10,41 @@
 
 <header class="navbar">
   <div class="logo">👜 ThriftVintage</div>
-  <nav class="nav-links"><a href="index.html#featured">Back</a></nav>
-  <div class="controls"><div class="dark-toggle" id="dark-toggle">🌙</div></div>
+  <nav class="nav-links">
+    <a href="index.html#featured">← Back</a>
+  </nav>
+  <div class="controls">
+    <div class="dark-toggle" id="dark-toggle">🌙</div>
+    <div class="cart-toggle" id="cart-toggle">🛍️<span id="cart-count">0</span></div>
+  </div>
 </header>
 
 <main class="product-page">
   <div class="product-container">
-    <img src="https://placehold.co/500x600?text=Classic+Shoes" alt="Classic Shoes" />
+    <img src="https://placehold.co/500x600?text=Shoes" alt="Classic Shoes" />
     <div class="product-info">
       <h1>Classic Thrift Shoes</h1>
-      <p class="price">$40.00</p>
-      <p>Pre-loved timeless kicks with comfort soles. Great for everyday walks or pairing with casual denim.</p>
+      <p class="price">GH₵40.00</p>
+      <p>Comfortable and stylish vintage sneakers. Minimal wear, max comfort. Your everyday staple.</p>
       <button class="btn add-to-cart"
-  data-name="Classic Shoes"
-  data-price="40.00"
-  data-img="https://placehold.co/300x400?text=Shoes">
-  Add to Cart
-</button>
+        data-name="Classic Shoes"
+        data-price="40.00"
+        data-img="https://placehold.co/300x400?text=Shoes">
+        Add to Cart
+      </button>
+      <button class="btn whatsapp-buy"
+        data-name="Classic Shoes"
+        data-number="233202451751">
+        Buy on WhatsApp
+      </button>
     </div>
   </div>
 </main>
 
-<footer class="footer"><p>© 2025 ThriftVintage • All rights reserved</p></footer>
+<footer class="footer">
+  <p>© 2025 ThriftVintage</p>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
