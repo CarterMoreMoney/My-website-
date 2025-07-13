@@ -15,11 +15,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
 });
 
 // Form Handler
-document.getElementById("contact-form").addEventListener("submit", function (e) {
-  e.preventDefault();
-  alert("Thank you for your message!");
-  this.reset();
-});
+
 
 // Dark Mode Toggle
 const darkToggle = document.getElementById("dark-toggle");
