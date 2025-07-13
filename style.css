@@ -211,3 +211,33 @@ body.dark-mode .gallery-grid img {
 body.dark-mode .nav-links {
   background: #111;
 }
+/* Blog Section */
+.blog {
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+.blog h2 {
+  margin-bottom: 2rem;
+}
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+.blog-post {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  flex: 1;
+}
+body.dark-mode .blog {
+  background: #1a1a1a;
+}
+body.dark-mode .blog-post {
+  background: #222;
+  color: #eee;
+}
