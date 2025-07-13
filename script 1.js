@@ -1,0 +1,44 @@
+// Toggle Menu on Mobile
+document.getElementById("menu-toggle").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("show");
+});
+
+// Smooth Scroll
+document.querySelectorAll('.nav-links a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+    document.querySelector(".nav-links").classList.remove("show");
+  });
+});
+
+// Form Handler
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+  alert("Thank you for your message!");
+  this.reset();
+});
+
+// Dark Mode Toggle
+const darkToggle = document.getElementById("dark-toggle");
+const body = document.getElementById("theme-toggle");
+
+// Load saved preference
+if (localStorage.getItem("dark-mode") === "enabled") {
+  body.classList.add("dark-mode");
+  darkToggle.textContent = "☀️";
+}
+
+darkToggle.addEventListener("click", () => {
+  body.classList.toggle("dark-mode");
+
+  if (body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", "enabled");
+    darkToggle.textContent = "☀️";
+  } else {
+    localStorage.setItem("dark-mode", "disabled");
+    darkToggle.textContent = "🌙";
+  }
+});
