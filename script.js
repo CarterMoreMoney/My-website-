@@ -1,29 +1,92 @@
-// Dark Mode Toggle & Save
-const toggleDark = document.getElementById('dark-toggle');
-const body = document.getElementById('theme');
-toggleDark.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  toggleDark.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
-  localStorage.setItem('dark', body.classList.contains('dark') ? '1' : '0');
+// --- Cart Logic ---
+const cartToggle = document.getElementById('cart-toggle');
+const cartCount = document.getElementById('cart-count');
+const cartPopup = document.getElementById('cart-popup');
+const cartItemsContainer = document.getElementById('cart-items');
+const cartTotalDiv = document.getElementById('cart-total');
+const checkoutBtn = document.getElementById('checkout-btn');
+const nameInput = document.getElementById('customer-name');
+const emailInput = document.getElementById('customer-email');
+
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+updateCartDisplay();
+
+cartToggle.addEventListener('click', () => {
+  cartPopup.classList.toggle('show');
+  renderCart();
 });
-if (localStorage.getItem('dark')==='1') {
-  body.classList.add('dark');
-  toggleDark.textContent = '☀️';
+
+function addToCart(name, price, img) {
+  const key = name;
+  const existing = cart.find(i => i.name === key);
+  if (existing) existing.qty += 1;
+  else cart.push({ name, price, img, qty: 1 });
+  syncCart();
 }
 
-// Live Clock
-function updateTime() {
-  const tm = new Date();
-  const hh = String(tm.getHours()).padStart(2,'0');
-  const mm = String(tm.getMinutes()).padStart(2,'0');
-  document.getElementById('time').textContent = `${hh}:${mm}`;
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  syncCart();
+  renderCart();
 }
-updateTime();
-setInterval(updateTime,60000);
 
-// Mobile Menu Toggle
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
+function syncCart() {
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartDisplay();
+}
+
+function updateCartDisplay() {
+  cartCount.textContent = cart.reduce((sum, i) => sum + i.qty, 0);
+}
+
+function renderCart() {
+  cartItemsContainer.innerHTML = '';
+  let total = 0;
+  cart.forEach((item, i) => {
+    total += item.qty * parseFloat(item.price);
+    const div = document.createElement('div');
+    div.className = 'cart-item';
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}" />
+      <span class="cart-item-name">${item.name} x${item.qty}</span>
+      <span>GH₵${(item.qty * item.price).toFixed(2)}</span>
+      <span class="cart-item-remove" data-index="${i}">✖</span>
+    `;
+    cartItemsContainer.appendChild(div);
+  });
+
+  cartTotalDiv.textContent = 'Total: GH₵' + total.toFixed(2);
+
+  cartItemsContainer.querySelectorAll('.cart-item-remove').forEach(el => {
+    el.addEventListener('click', () => removeFromCart(el.dataset.index));
+  });
+}
+
+checkoutBtn.addEventListener('click', () => {
+  if (!nameInput.value || !emailInput.value) {
+    alert('Please enter your name and email to complete checkout.');
+    return;
+  }
+
+  let body = `Order from: ${nameInput.value} (${emailInput.value})%0D%0A`;
+  cart.forEach(i => {
+    body += `${i.name} x${i.qty} - GH₵${(i.qty * i.price).toFixed(2)}%0D%0A`;
+  });
+
+  // Send email
+  window.location.href = `mailto:hello@thriftvintage.com?subject=New Order&body=${body}`;
+
+  // Clear cart
+  cart = [];
+  syncCart();
+  renderCart();
+  cartPopup.classList.remove('show');
+});
+
+// Activate all "Add to Cart" buttons
+document.querySelectorAll('.add-to-cart').forEach(btn => {
+  btn.addEventListener('click', () => {
+    addToCart(btn.dataset.name, btn.dataset.price, btn.dataset.img);
+  });
 });
