@@ -276,3 +276,37 @@ body.dark-mode .blog-post {
     background: #111;
   }
 }
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* Mobile Responsive Menu */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+    z-index: 10;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  body.dark-mode .nav-links {
+    background: #111;
+  }
+}
