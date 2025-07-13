@@ -310,3 +310,24 @@ body.dark-mode .blog-post {
     background: #111;
   }
 }
+/* Hide nav links by default */
+.nav-links {
+  display: none;
+}
+
+/* Show them only when toggled */
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background: #222;
+  width: 100%;
+  padding: 1rem 2rem;
+  z-index: 10;
+}
+
+body.dark-mode .nav-links.show {
+  background: #111;
+}
