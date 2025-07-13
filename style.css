@@ -1,53 +1,27 @@
-/*-------------  Reset & Fonts  -------------*/
-* { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: Arial, sans-serif; background:#fafafa; color:#333; transition: background 0.3s, color 0.3s; }
-a { text-decoration:none; color:inherit; }
-
-/*-------------  Navbar  -------------*/
-.navbar {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:1rem 2rem; position:relative; background:#fff; z-index:100;
-}
 .logo { font-size:1.5rem; font-weight:bold; }
-.nav-links { display:flex; gap:1rem; }
-.nav-links a { padding:0.5rem; border-radius:4px; transition:background 0.2s; }
-.nav-links a:hover { background: #eee; }
 
-/*-------------  Controls  -------------*/
-.controls { display:flex; align-items:center; gap:1rem; }
-.menu-toggle { display:none; font-size:1.5rem; cursor:pointer; }
-.time-display { font-size:0.9rem; }
-
-/*-------------  Hero  -------------*/
-.hero {
-  background: url('https://placehold.co/1200x600?text=Fashion+Banner') center/cover no-repeat;
-  height:60vh; display:flex; align-items:center; justify-content:center;
-  color:#fff; text-align:center;
-}
-.hero-text h1 { font-size:2.5rem; margin-bottom:1rem; }
-.hero-text p { font-size:1.1rem; margin-bottom:1.5rem; }
-.btn { background:#000; color:#fff; padding:0.7rem 1.5rem; border:none; border-radius:4px; }
-
-/*-------------  Categories & Featured  -------------*/
-.categories, .featured, .about, .contact { padding:4rem 2rem; text-align:center; }
+/* Section Headings */
+.collections, .featured, .about, .contact { padding:4rem 2rem; text-align:center; }
 .cards, .grid { display:grid; gap:1.5rem; margin-top:2rem; }
+
+/* Collection Cards */
 .cards { grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); }
+.card { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.card img { width:100%; border-radius:4px; margin-bottom:0.7rem; }
+
+/* Featured Items */
 .grid { grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); }
-.card, .item { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-.card img, .item img { width:100%; border-radius:4px; margin-bottom:0.7rem; }
+.item { background:#fff; padding:1rem; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
+.item img { width:100%; border-radius:4px; margin-bottom:0.7rem; }
 
-/*-------------  Footer  -------------*/
-.footer { padding:2rem; background:#222; color:#eee; text-align:center; }
+/* Hero Background */
+.hero {
+  background: url('https://placehold.co/1200x600?text=Fashion+Background') center/cover no-repeat;
+  height:60vh; display:flex; align-items:center; justify-content:center; color:#fff; text-align:center;
+}
 
-/*-------------  Dark Mode  -------------*/
+/* Dark Mode Adjustments */
 body.dark { background:#111; color:#eee; }
 body.dark .navbar, body.dark .card, body.dark .item, body.dark .about, body.dark .contact { background:#222; }
 body.dark .btn { background:#eee; color:#000; }
-body.dark .navbar a:hover { background:#333; }
-
-/*-------------  Responsive  -------------*/
-@media(max-width:768px) {
-  .nav-links { display:none; position:absolute; top:60px; right:0; background:#fff; flex-direction:column; width:100%; box-shadow:0 2px 8px rgba(0,0,0,0.1); }
-  .nav-links.show { display:flex; }
-  .menu-toggle { display:block; }
-}
