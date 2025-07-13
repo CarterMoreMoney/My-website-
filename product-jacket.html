@@ -10,8 +10,13 @@
 
 <header class="navbar">
   <div class="logo">👜 ThriftVintage</div>
-  <nav class="nav-links"><a href="index.html#featured">← Back</a></nav>
-  <div class="controls"><div class="dark-toggle" id="dark-toggle">🌙</div></div>
+  <nav class="nav-links">
+    <a href="index.html#featured">← Back</a>
+  </nav>
+  <div class="controls">
+    <div class="dark-toggle" id="dark-toggle">🌙</div>
+    <div class="cart-toggle" id="cart-toggle">🛍️<span id="cart-count">0</span></div>
+  </div>
 </header>
 
 <main class="product-page">
@@ -19,19 +24,27 @@
     <img src="https://placehold.co/500x600?text=Jacket" alt="Vintage Jacket" />
     <div class="product-info">
       <h1>Vintage Denim Jacket</h1>
-      <p class="price">$45.00</p>
-      <p>Classic vintage denim jacket with a relaxed fit and aged wash. Perfect for everyday wear.</p>
+      <p class="price">GH₵45.00</p>
+      <p>A relaxed-fit faded denim jacket. Perfect for layering year-round with your thrift fits.</p>
       <button class="btn add-to-cart"
-  data-name="Vintage Jacket"
-  data-price="45.00"
-  data-img="https://placehold.co/300x400?text=Jacket">
-  Add to Cart
-</button>
+        data-name="Vintage Denim Jacket"
+        data-price="45.00"
+        data-img="https://placehold.co/300x400?text=Jacket">
+        Add to Cart
+      </button>
+      <button class="btn whatsapp-buy"
+        data-name="Vintage Denim Jacket"
+        data-number="233202451751">
+        Buy on WhatsApp
+      </button>
     </div>
   </div>
 </main>
 
-<footer class="footer"><p>© 2025 ThriftVintage</p></footer>
+<footer class="footer">
+  <p>© 2025 ThriftVintage</p>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
