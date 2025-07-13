@@ -146,3 +146,35 @@ body.dark-mode footer {
   background: #000;
   color: #999;
 }
+/* Gallery Section */
+.gallery {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+.gallery h2 {
+  margin-bottom: 2rem;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode override for gallery */
+body.dark-mode .gallery {
+  background: #1a1a1a;
+}
+body.dark-mode .gallery-grid img {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.05);
+}
