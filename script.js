@@ -1,3 +1,17 @@
+// ---- Dark Mode Toggle ----
+const themeEl = document.getElementById('theme');
+const darkToggle = document.getElementById('dark-toggle');
+darkToggle.addEventListener('click', () => {
+  themeEl.classList.toggle('dark');
+  darkToggle.textContent = themeEl.classList.contains('dark') ? '☀️' : '🌙';
+});
+
+// ---- Mobile Hamburger Menu ----
+const menuToggle = document.getElementById('menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
 // --- Cart Logic ---
 const cartToggle = document.getElementById('cart-toggle');
 const cartCount = document.getElementById('cart-count');
