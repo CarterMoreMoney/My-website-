@@ -1,13 +1,13 @@
 :root {
-  --accent: #b88b4a;
+  --primary: #b88b4a;
   --dark: #1f1f1f;
   --light: #fafafa;
-  --text-dark: #333;
-  --text-muted: #888;
   --white: #fff;
+  --text-dark: #333;
+  --text-muted: #777;
 }
 
-/* Reset & Global Styles */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -24,27 +24,26 @@ a {
   color: inherit;
 }
 img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 8px;
 }
 
 /* Navbar */
 .navbar {
-  background: var(--dark);
-  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  flex-wrap: wrap;
+  background: var(--dark);
+  color: var(--white);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--accent);
+  color: var(--primary);
 }
 .nav-links {
   display: flex;
@@ -52,8 +51,9 @@ img {
 }
 .nav-links a {
   color: var(--white);
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
+  transition: background 0.3s;
 }
 .nav-links a:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -65,18 +65,18 @@ img {
 }
 .controls {
   display: flex;
-  align-items: center;
   gap: 1rem;
+  align-items: center;
 }
 .time-display {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   height: 60vh;
-  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.1)),
-              url('https://placehold.co/1200x600?text=Thrift+Fashion+Banner') center/cover no-repeat;
+  background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.1)),
+    url('https://placehold.co/1200x600?text=Thrift+Banner') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,30 +92,31 @@ img {
   margin-bottom: 1.5rem;
 }
 .btn {
-  padding: 0.75rem 1.5rem;
-  background: var(--accent);
+  background: var(--primary);
   color: var(--white);
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s;
 }
 .btn:hover {
   background: #a26f3e;
 }
 
-/* Section Structure */
+/* Section Layout */
 section {
   padding: 4rem 2rem;
   text-align: center;
 }
 h2 {
-  color: var(--accent);
   font-size: 2rem;
+  color: var(--primary);
   margin-bottom: 2rem;
 }
 
-/* Cards & Grids */
+/* Cards & Product Grid */
 .cards, .grid {
   display: grid;
   gap: 2rem;
@@ -131,16 +132,16 @@ h2 {
   background: var(--white);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 .card:hover, .item:hover {
   transform: translateY(-5px);
 }
 .card p, .item p {
-  margin-top: 0.5rem;
-  font-weight: 600;
+  font-weight: bold;
   color: var(--text-muted);
+  margin-top: 0.5rem;
 }
 
 /* About & Contact */
@@ -150,20 +151,20 @@ h2 {
   line-height: 1.6;
 }
 .contact form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 500px;
-  margin: 0 auto;
 }
 .contact input, .contact textarea {
   padding: 0.75rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 1rem;
 }
 .contact button {
-  background: var(--accent);
+  background: var(--primary);
   color: var(--white);
   padding: 0.75rem;
   border: none;
@@ -181,12 +182,11 @@ h2 {
   color: #ccc;
   padding: 2rem;
   text-align: center;
-  font-size: 0.9rem;
 }
 
 /* Dark Mode */
 body.dark {
-  background: #121212;
+  background: #111;
   color: #eee;
 }
 body.dark .navbar,
@@ -202,21 +202,18 @@ body.dark .contact button {
   background: #eee;
   color: #000;
 }
-body.dark .nav-links a:hover {
-  background: rgba(255, 255, 255, 0.15);
-}
 
-/* Mobile Nav */
+/* Mobile Navigation */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
     background: var(--dark);
-    padding: 1rem;
     position: absolute;
     top: 60px;
     left: 0;
+    padding: 1rem;
   }
   .nav-links.show {
     display: flex;
