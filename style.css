@@ -76,7 +76,7 @@ img {
   font-size: 0.8rem;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -84,9 +84,9 @@ img {
   color: #fff;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero h1, .hero p {
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero .btn {
@@ -105,11 +105,11 @@ img {
   transform: scale(1.05);
 }
 
-/* Section Layout */
+/* Sections */
 section {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
 }
 
 h2 {
@@ -118,10 +118,10 @@ h2 {
   color: var(--primary);
 }
 
-/* Cards & Collections */
+/* Cards */
 .cards, .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
@@ -141,6 +141,11 @@ h2 {
   text-align: center;
   margin-top: 0.5rem;
   font-weight: 600;
+}
+
+.card img, .item img {
+  height: 220px;
+  object-fit: cover;
 }
 
 /* Product Page */
@@ -259,7 +264,7 @@ h2 {
   color: var(--muted);
 }
 
-/* Scroll Animations */
+/* Scroll Reveal Animation */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(30px);
