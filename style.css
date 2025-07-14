@@ -1,0 +1,143 @@
+:root {
+  --bg: #ffffff;
+  --fg: #333333;
+  --primary: #cc3366;
+  --primary-hover: #d14e80;
+  --accent: #ffd700;
+  --muted: #666666;
+}
+
+body.dark {
+  --bg: #1a1a1a;
+  --fg: #eeeeee;
+  --primary: #cc3366;
+  --primary-hover: #d14e80;
+  --accent: #ffd700;
+  --muted: #bbbbbb;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: var(--bg);
+  border-bottom: 3px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  color: white;
+}
+
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary);
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+}
+
+.product-list li {
+  margin: 1rem 0;
+}
+
+input, textarea {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.btn, .checkout-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover, .checkout-btn:hover {
+  background: var(--primary-hover);
+}
+
+.cart-popup {
+  position: fixed;
+  top: 80px;
+  right: -400px;
+  width: 320px;
+  background: var(--bg);
+  box-shadow: -4px 0 12px rgba(0,0,0,0.2);
+  padding: 1rem;
+  border-radius: 8px 0 0 8px;
+  transition: right 0.4s;
+  z-index: 1000;
+}
+
+.cart-popup.show {
+  right: 20px;
+}
+
+.cart-total {
+  font-weight: bold;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.footer {
+  text-align: center;
+  background: #f1f1f1;
+  padding: 1rem;
+  color: var(--muted);
+}
+
+/* Animations */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease-out;
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
