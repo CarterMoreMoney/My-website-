@@ -1,12 +1,20 @@
-// Dark Mode Toggle
-const theme = document.getElementById('theme');
+// Dark Mode Default with Toggle
+const body = document.getElementById('theme');
 const darkToggle = document.getElementById('dark-toggle');
+
 darkToggle.addEventListener('click', () => {
-  theme.classList.toggle('dark');
-  darkToggle.textContent = theme.classList.contains('dark') ? '☀️' : '🌙';
+  if (body.classList.contains('dark')) {
+    body.classList.remove('dark');
+    body.classList.add('light');
+    darkToggle.textContent = '🌙';
+  } else {
+    body.classList.remove('light');
+    body.classList.add('dark');
+    darkToggle.textContent = '☀️';
+  }
 });
 
-// Cart Functionality
+// Cart System
 const cartToggle = document.getElementById('cart-toggle');
 const cartPopup = document.getElementById('cart-popup');
 const cartCount = document.getElementById('cart-count');
@@ -26,18 +34,22 @@ function updateCart() {
 function renderCart() {
   cartItems.innerHTML = '';
   let total = 0;
-  cart.forEach((item, index) => {
+  cart.forEach((item) => {
     total += item.qty * item.price;
     const div = document.createElement('div');
-    div.innerHTML = `${item.name} x${item.qty} - GH₵${item.qty * item.price}`;
+    div.innerHTML = `${item.name} x${item.qty} = GH₵${item.qty * item.price}`;
     cartItems.appendChild(div);
   });
   cartTotal.textContent = 'Total: GH₵ ' + total.toFixed(2);
 }
 
 function addToCart(name, price) {
-  const product = cart.find(item => item.name === name);
-  product ? product.qty++ : cart.push({ name, price, qty: 1 });
+  const existing = cart.find(item => item.name === name);
+  if (existing) {
+    existing.qty++;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
   updateCart();
 }
 
@@ -47,7 +59,10 @@ cartToggle.addEventListener('click', () => {
 });
 
 checkoutBtn.addEventListener('click', () => {
-  if (!nameInput.value || !emailInput.value) return alert('Enter name and email');
+  if (!nameInput.value || !emailInput.value) {
+    alert('Please fill in name and email!');
+    return;
+  }
   let message = `Order from ${nameInput.value} (${emailInput.value}):\n`;
   cart.forEach(item => {
     message += `${item.name} x${item.qty} = GH₵${item.qty * item.price}\n`;
@@ -56,16 +71,21 @@ checkoutBtn.addEventListener('click', () => {
   window.location.href = `mailto:hello@thriftvintage.com?subject=New Order&body=${encodeURIComponent(message)}`;
   cart = [];
   updateCart();
+  renderCart();
   cartPopup.classList.remove('show');
 });
 
-// Scroll Reveal Animation
+// Scroll Reveal Animations
 document.addEventListener('DOMContentLoaded', () => {
   updateCart();
   const reveals = document.querySelectorAll('.scroll-reveal');
-  window.addEventListener('scroll', () => {
-    reveals.forEach(el => {
-      if (el.getBoundingClientRect().top < window.innerHeight * 0.85) el.classList.add('visible');
+  const reveal = () => {
+    reveals.forEach(section => {
+      if (section.getBoundingClientRect().top < window.innerHeight * 0.85) {
+        section.classList.add('visible');
+      }
     });
-  });
+  };
+  window.addEventListener('scroll', reveal);
+  reveal();
 });
