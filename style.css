@@ -28,12 +28,6 @@ a {
   text-decoration: none;
 }
 
-img {
-  width: 100%;
-  display: block;
-  border-radius: 8px;
-}
-
 /* Navbar */
 .navbar {
   display: flex;
@@ -89,22 +83,6 @@ img {
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-.hero .btn {
-  background: var(--accent);
-  color: #333;
-  font-weight: bold;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-}
-
-.hero .btn:hover {
-  background: var(--primary-hover);
-  color: #fff;
-  transform: scale(1.05);
-}
-
 /* Sections */
 section {
   max-width: 1100px;
@@ -118,66 +96,12 @@ h2 {
   color: var(--primary);
 }
 
-/* Cards */
-.cards, .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-}
-
-.card, .item a {
-  background: #f9f9f9;
-  padding: 0.5rem;
-  border: 1px solid #ddd;
-  transition: transform 0.3s;
-}
-
-.card:hover, .item:hover a {
-  transform: scale(1.05);
-  border-color: var(--primary);
-}
-
-.card p, .item p {
+p {
   text-align: center;
-  margin-top: 0.5rem;
-  font-weight: 600;
-}
-
-.card img, .item img {
-  height: 220px;
-  object-fit: cover;
-}
-
-/* Product Page */
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 2rem 1rem;
-}
-
-.product-info {
-  flex: 1;
-}
-
-.product-info h1 {
-  color: var(--primary);
-}
-
-.product-info .price {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin: 1rem 0;
-}
-
-.product-page img {
-  max-width: 400px;
-  transition: transform 0.3s;
-  cursor: zoom-in;
-}
-
-.product-page img:hover {
-  transform: scale(1.05);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: auto;
+  color: var(--fg);
 }
 
 /* Buttons */
@@ -186,7 +110,8 @@ h2 {
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
-  margin-top: 1rem;
+  margin: 1rem auto;
+  display: block;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
@@ -214,17 +139,6 @@ h2 {
 
 .cart-popup.show {
   right: 20px;
-}
-
-.cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.cart-item img {
-  width: 50px;
-  margin-right: 0.5rem;
 }
 
 .cart-total {
