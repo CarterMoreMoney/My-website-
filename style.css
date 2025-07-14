@@ -299,3 +299,14 @@ body.dark .contact button {
 .cart-total { font-weight: bold; margin-top: 1rem; text-align: right; }
 .checkout-btn { margin-top: 1rem; background: var(--primary); color: #fff; border: none; width: 100%; padding: 0.75rem; border-radius: 4px; cursor: pointer; }
 .cart-info input { width: calc(100% - 0.5rem); margin-top: 0.5rem; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.7s ease-out;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
