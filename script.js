@@ -115,3 +115,17 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', onScroll);
   onScroll();
 });
+document.addEventListener('DOMContentLoaded', () => {
+  const reveals = document.querySelectorAll('.scroll-reveal');
+
+  const onScroll = () => {
+    reveals.forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
+        el.classList.add('visible');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', onScroll);
+  onScroll(); // trigger on load
+});
