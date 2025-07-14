@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ThriftVintage</title>
+<title>ThriftVintage | Dark Mode Fashion Store</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body id="theme">
-
+<body id="theme" class="dark">
 <header class="navbar">
   <div class="logo">👜 ThriftVintage</div>
   <nav class="nav-links">
@@ -17,18 +16,18 @@
     <a href="#contact">Contact</a>
   </nav>
   <div class="controls">
-    <div id="dark-toggle">🌙</div>
+    <div id="dark-toggle">☀️</div>
     <div id="cart-toggle">🛍️ <span id="cart-count">0</span></div>
   </div>
 </header>
 
-<section class="hero">
+<section class="hero scroll-reveal">
   <h1>Welcome to ThriftVintage</h1>
-  <p>Timeless second-hand fashion with unique styles.</p>
+  <p>Modern vintage fashion at your fingertips.</p>
 </section>
 
 <section id="collections" class="scroll-reveal">
-  <h2>Our Collections</h2>
+  <h2>Collections</h2>
   <ul class="product-list">
     <li><a href="product-hoodie.html">Hoodie</a></li>
     <li><a href="product-thrift.html">Thrift</a></li>
@@ -41,22 +40,22 @@
 </section>
 
 <section id="about" class="scroll-reveal">
-  <h2>About Us</h2>
-  <p>ThriftVintage offers hand-picked fashion items at affordable prices. Shop smart, shop sustainable!</p>
+  <h2>About</h2>
+  <p>At ThriftVintage, we blend fashion with affordability. Fresh, pre-loved fashion available to anyone, anytime.</p>
 </section>
 
 <section id="contact" class="scroll-reveal">
-  <h2>Contact Us</h2>
+  <h2>Contact</h2>
   <form action="https://getform.io/f/aejlprzb" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input name="name" type="text" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
     <button class="btn">Send Message</button>
   </form>
 </section>
 
-<footer class="footer">
-  <p>© 2025 ThriftVintage • All rights reserved.</p>
+<footer class="footer scroll-reveal">
+  <p>© 2025 ThriftVintage. All rights reserved.</p>
 </footer>
 
 <div class="cart-popup" id="cart-popup">
@@ -70,4 +69,4 @@
 
 <script src="script.js"></script>
 </body>
-</html> 
+</html>
