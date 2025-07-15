@@ -16,20 +16,20 @@ body {
   color: var(--white);
 }
 
-h1, h2, h3 {
+h1,h2,h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* === NAVIGATION === */
+/* Navbar */
 .topbar {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   background: var(--black);
-  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 999;
 }
 
 .nav-row {
@@ -37,8 +37,8 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  padding: 1rem;
   max-width: 1200px;
-  padding: 1rem 0;
 }
 
 .logo {
@@ -53,35 +53,60 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
+.top-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--gold);
+  cursor: pointer;
+}
+
 .nav-links {
   display: none;
   flex-direction: column;
-  gap: 1.2rem;
-  margin: 1rem 0;
-  background: var(--black);
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .nav-links a {
-  color: var(--white);
-  font-weight: bold;
   text-decoration: none;
-  font-size: 1.1rem;
+  color: var(--white);
 }
 
 .nav-links.show {
   display: flex;
 }
 
-/* === HERO SECTION === */
+/* Search Bar */
+.search-bar {
+  display: none;
+  width: 90%;
+  max-width: 400px;
+  margin: 0.5rem auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.8rem;
+  background: #111;
+  border: 1px solid var(--gold);
+  color: var(--white);
+}
+
+/* Hero */
 .hero {
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
-  background: radial-gradient(circle, #111, var(--black));
   padding: 2rem;
+  background: radial-gradient(circle, #111, var(--black));
 }
 
 .hero h1 {
@@ -89,20 +114,13 @@ h1, h2, h3 {
   margin-bottom: 1rem;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
 .hero-btn {
+  margin-top: 1.5rem;
   padding: 1rem 2rem;
-  border: 2px solid var(--gold);
   color: var(--white);
   background: transparent;
-  font-weight: bold;
-  text-transform: uppercase;
+  border: 2px solid var(--gold);
   cursor: pointer;
-  transition: 0.3s;
 }
 
 .hero-btn:hover {
@@ -110,22 +128,17 @@ h1, h2, h3 {
   color: var(--black);
 }
 
-/* === COLLECTIONS (HOMEPAGE PRODUCTS) === */
+/* Collections */
 .collections {
   padding: 3rem 1rem;
   text-align: center;
-}
-
-.collections h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
 }
 
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
-  padding: 1rem;
+  margin-top: 2rem;
 }
 
 .product-card {
@@ -133,94 +146,34 @@ h1, h2, h3 {
   border: 1px solid var(--gold);
   border-radius: 8px;
   overflow: hidden;
-  text-align: center;
-  text-decoration: none;
-  color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 300px;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: scale(1.03);
-  background: rgba(212, 175, 55, 0.1);
+  text-decoration: none;
+  color: var(--white);
 }
 
 .product-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-bottom: 1px solid var(--gold);
 }
 
 .product-card h3 {
+  margin-top: auto;
   padding: 0.8rem;
-  font-size: 1.1rem;
 }
 
-/* === PRODUCT PAGE === */
-.product-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--black);
-  padding: 4rem 2rem;
-}
-
-.product-container {
-  max-width: 900px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-  text-align: center;
-}
-
-.product-image {
-  width: 100%;
-  max-width: 600px;
-}
-
-.product-image img {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid var(--gold);
-}
-
-.product-info h1 {
-  font-size: 2.5rem;
-  color: var(--gold);
-  margin-bottom: 1rem;
-}
-
-.product-info p {
-  font-size: 1.1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* === ABOUT & CONTACT === */
+/* About & Contact */
 .about, .contact {
   padding: 3rem 1rem;
   text-align: center;
 }
 
-.about h2, .contact h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
 form input, form textarea {
   width: 80%;
+  margin: 0.5rem;
   padding: 0.8rem;
-  margin: 0.5rem 0;
   background: #111;
   border: 1px solid #444;
   color: var(--white);
@@ -231,28 +184,26 @@ form button {
   background: var(--gold);
   color: var(--black);
   font-weight: bold;
-  padding: 0.9rem 2rem;
+  padding: 1rem 2rem;
   border: none;
   cursor: pointer;
   margin-top: 1rem;
 }
 
-/* === FOOTER === */
+/* Footer */
 .footer {
   text-align: center;
   padding: 1rem;
   background: #111;
-  color: var(--white);
 }
 
-/* === RESPONSIVE === */
+/* Responsive */
 @media (min-width: 768px) {
   .nav-links {
     display: flex !important;
     flex-direction: row;
     gap: 2rem;
-    margin: 0;
-    background: transparent;
+    padding: 0;
   }
   .hamburger {
     display: none;
