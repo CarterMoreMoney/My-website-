@@ -1,25 +1,17 @@
-// Toggle hamburger menu on mobile
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
+const searchBtn = document.getElementById('search-btn');
+const userBtn = document.getElementById('user-btn');
+const searchBar = document.getElementById('search-bar');
 
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('show');
 });
 
-// Optional: Scroll reveal animations
-document.addEventListener('DOMContentLoaded', () => {
-  const reveals = document.querySelectorAll('.scroll-reveal');
-  
-  const reveal = () => {
-    reveals.forEach(el => {
-      const windowHeight = window.innerHeight;
-      const elementTop = el.getBoundingClientRect().top;
-      if (elementTop < windowHeight * 0.85) {
-        el.classList.add('visible');
-      }
-    });
-  };
+searchBtn.addEventListener('click', () => {
+  searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
+});
 
-  window.addEventListener('scroll', reveal);
-  reveal(); // Trigger on load
+userBtn.addEventListener('click', () => {
+  alert('👤 User account login/signup coming soon!');
 });
