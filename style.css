@@ -16,20 +16,19 @@ body {
   color: var(--white);
 }
 
-h1,h2,h3 {
+h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-/* Navbar */
 .topbar {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   background: var(--black);
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
 .nav-row {
@@ -37,8 +36,8 @@ h1,h2,h3 {
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  padding: 1rem;
   max-width: 1200px;
+  padding: 1rem 0;
 }
 
 .logo {
@@ -74,15 +73,14 @@ h1,h2,h3 {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--white);
+  text-decoration: none;
 }
 
 .nav-links.show {
   display: flex;
 }
 
-/* Search Bar */
 .search-bar {
   display: none;
   width: 90%;
@@ -93,20 +91,21 @@ h1,h2,h3 {
 .search-bar input {
   width: 100%;
   padding: 0.8rem;
-  background: #111;
+  border-radius: 4px;
   border: 1px solid var(--gold);
+  background: #111;
   color: var(--white);
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 2rem;
   background: radial-gradient(circle, #111, var(--black));
+  padding: 2rem;
 }
 
 .hero h1 {
@@ -117,9 +116,9 @@ h1,h2,h3 {
 .hero-btn {
   margin-top: 1.5rem;
   padding: 1rem 2rem;
-  color: var(--white);
-  background: transparent;
   border: 2px solid var(--gold);
+  background: transparent;
+  color: var(--white);
   cursor: pointer;
 }
 
@@ -128,7 +127,6 @@ h1,h2,h3 {
   color: var(--black);
 }
 
-/* Collections */
 .collections {
   padding: 3rem 1rem;
   text-align: center;
@@ -148,23 +146,20 @@ h1,h2,h3 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 300px;
   text-decoration: none;
   color: var(--white);
 }
 
-.product-card img {
+.product-card picture, .product-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
 .product-card h3 {
-  margin-top: auto;
   padding: 0.8rem;
 }
 
-/* About & Contact */
 .about, .contact {
   padding: 3rem 1rem;
   text-align: center;
@@ -187,17 +182,14 @@ form button {
   padding: 1rem 2rem;
   border: none;
   cursor: pointer;
-  margin-top: 1rem;
 }
 
-/* Footer */
 .footer {
   text-align: center;
   padding: 1rem;
   background: #111;
 }
 
-/* Responsive */
 @media (min-width: 768px) {
   .nav-links {
     display: flex !important;
