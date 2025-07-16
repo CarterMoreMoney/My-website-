@@ -13,15 +13,15 @@ searchBtn.addEventListener('click', () => {
 });
 
 userBtn.addEventListener('click', () => {
-  alert('👤 Account feature coming soon!');
+  alert('👤 Login/Register coming soon!');
 });
 
-// PRODUCT SEARCH FUNCTIONALITY
-const searchBarInput = document.querySelector('#search-bar input');
+// Simple Search Filter
+const searchInput = document.querySelector('#search-bar input');
 const productCards = document.querySelectorAll('.product-card');
 
-searchBarInput.addEventListener('input', () => {
-  const query = searchBarInput.value.trim().toLowerCase();
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.toLowerCase().trim();
   productCards.forEach(card => {
     const name = card.getAttribute('data-name').toLowerCase();
     card.style.display = name.includes(query) ? 'flex' : 'none';
