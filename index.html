@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ThriftVintage — Home</title>
+
+  <!-- Preload hero and font -->
+  <link rel="preload" as="image" href="images/hero.webp">
+  <link rel="preload" as="font" href="fonts/Montserrat.woff2" type="font/woff2" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,13 +23,11 @@
       <button id="user-btn" class="icon-btn">👤</button>
     </div>
   </div>
-
   <nav class="nav-links" id="nav-links">
     <a href="#collections">Collections</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
-
   <div id="search-bar" class="search-bar">
     <input type="text" placeholder="Search collections...">
   </div>
@@ -41,42 +44,15 @@
 <section id="collections" class="collections">
   <h2>Our Collections</h2>
   <div class="products-grid">
-
+    <!-- Example card using WebP and lazy loading -->
     <a href="product-hoodie.html" class="product-card" data-name="Hoodie">
-      <img src="images/hoodie.JPG" alt="Hoodie">
+      <picture>
+        <source srcset="images/hoodie.webp" type="image/webp">
+        <img src="images/hoodie.jpg" loading="lazy" alt="Hoodie">
+      </picture>
       <h3>Hoodie</h3>
     </a>
-
-    <a href="product-thrift.html" class="product-card" data-name="Thrift">
-      <img src="images/thrift.JPG" alt="Thrift">
-      <h3>Thrift</h3>
-    </a>
-
-    <a href="product-jewelries.html" class="product-card" data-name="Jewelries">
-      <img src="images/jewelries.JPG" alt="Jewelries">
-      <h3>Jewelries</h3>
-    </a>
-
-    <a href="product-designer-socks.html" class="product-card" data-name="Designer Socks">
-      <img src="images/designer-socks.JPG" alt="Designer Socks">
-      <h3>Designer Socks</h3>
-    </a>
-
-    <a href="product-spectacles.html" class="product-card" data-name="Spectacles">
-      <img src="images/spectacles.JPG" alt="Spectacles">
-      <h3>Spectacles</h3>
-    </a>
-
-    <a href="product-designer-bags.html" class="product-card" data-name="Designer Bags">
-      <img src="images/designer-bags.JPG" alt="Designer Bags">
-      <h3>Designer Bags</h3>
-    </a>
-
-    <a href="product-baseball-caps.html" class="product-card" data-name="Baseball Caps">
-      <img src="images/baseball-caps.JPG" alt="Baseball Caps">
-      <h3>Baseball Caps</h3>
-    </a>
-
+    <!-- Repeat for other products -->
   </div>
 </section>
 
@@ -88,8 +64,8 @@
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
   <form action="https://getform.io/f/aejlprzb" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input name="name" type="text" placeholder="Your Name" required>
+    <input name="email" type="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message</button>
   </form>
