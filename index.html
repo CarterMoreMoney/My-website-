@@ -4,11 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ThriftVintage — Home</title>
-
-  <!-- Preload hero and font -->
-  <link rel="preload" as="image" href="images/hero.webp">
-  <link rel="preload" as="font" href="fonts/Montserrat.woff2" type="font/woff2" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -23,11 +18,13 @@
       <button id="user-btn" class="icon-btn">👤</button>
     </div>
   </div>
+
   <nav class="nav-links" id="nav-links">
     <a href="#collections">Collections</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
   </nav>
+
   <div id="search-bar" class="search-bar">
     <input type="text" placeholder="Search collections...">
   </div>
@@ -44,7 +41,7 @@
 <section id="collections" class="collections">
   <h2>Our Collections</h2>
   <div class="products-grid">
-    <!-- Example card using WebP and lazy loading -->
+
     <a href="product-hoodie.html" class="product-card" data-name="Hoodie">
       <picture>
         <source srcset="images/hoodie.webp" type="image/webp">
@@ -52,7 +49,55 @@
       </picture>
       <h3>Hoodie</h3>
     </a>
-    <!-- Repeat for other products -->
+
+    <a href="product-thrift.html" class="product-card" data-name="Thrift">
+      <picture>
+        <source srcset="images/thrift.webp" type="image/webp">
+        <img src="images/thrift.jpg" loading="lazy" alt="Thrift">
+      </picture>
+      <h3>Thrift</h3>
+    </a>
+
+    <a href="product-jewelries.html" class="product-card" data-name="Jewelries">
+      <picture>
+        <source srcset="images/jewelries.webp" type="image/webp">
+        <img src="images/jewelries.jpg" loading="lazy" alt="Jewelries">
+      </picture>
+      <h3>Jewelries</h3>
+    </a>
+
+    <a href="product-designer-socks.html" class="product-card" data-name="Designer Socks">
+      <picture>
+        <source srcset="images/designer-socks.webp" type="image/webp">
+        <img src="images/designer-socks.jpg" loading="lazy" alt="Designer Socks">
+      </picture>
+      <h3>Designer Socks</h3>
+    </a>
+
+    <a href="product-spectacles.html" class="product-card" data-name="Spectacles">
+      <picture>
+        <source srcset="images/spectacles.webp" type="image/webp">
+        <img src="images/spectacles.jpg" loading="lazy" alt="Spectacles">
+      </picture>
+      <h3>Spectacles</h3>
+    </a>
+
+    <a href="product-designer-bags.html" class="product-card" data-name="Designer Bags">
+      <picture>
+        <source srcset="images/designer-bags.webp" type="image/webp">
+        <img src="images/designer-bags.jpg" loading="lazy" alt="Designer Bags">
+      </picture>
+      <h3>Designer Bags</h3>
+    </a>
+
+    <a href="product-baseball-caps.html" class="product-card" data-name="Baseball Caps">
+      <picture>
+        <source srcset="images/baseball-caps.webp" type="image/webp">
+        <img src="images/baseball-caps.jpg" loading="lazy" alt="Baseball Caps">
+      </picture>
+      <h3>Baseball Caps</h3>
+    </a>
+
   </div>
 </section>
 
