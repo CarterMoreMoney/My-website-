@@ -1,4 +1,5 @@
 const grid = document.getElementById('sub-products');
+const phone = "233202451751"; // Ghana country code + your number ✅
 
 function renderProducts(list) {
   list.forEach(item => {
@@ -10,15 +11,18 @@ function renderProducts(list) {
         <img src="images/${item.fallback}" loading="lazy" alt="${item.title}">
       </picture>
       <h3>${item.title}</h3>
+      <a href="https://wa.me/${phone}?text=Hi,%20I'm%20interested%20in%20${encodeURIComponent(item.title)}" target="_blank" class="contact-btn">Contact Us to Order</a>
     `;
     grid.appendChild(card);
   });
 }
 
-// Detect correct product list to load
 document.addEventListener('DOMContentLoaded', function() {
   if (typeof hoodieProducts !== 'undefined') renderProducts(hoodieProducts);
   if (typeof thriftProducts !== 'undefined') renderProducts(thriftProducts);
   if (typeof spectaclesProducts !== 'undefined') renderProducts(spectaclesProducts);
-  // Add same checks for other product types
+  if (typeof jewelriesProducts !== 'undefined') renderProducts(jewelriesProducts);
+  if (typeof designerBagsProducts !== 'undefined') renderProducts(designerBagsProducts);
+  if (typeof designerSocksProducts !== 'undefined') renderProducts(designerSocksProducts);
+  if (typeof baseballCapsProducts !== 'undefined') renderProducts(baseballCapsProducts);
 });
