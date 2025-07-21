@@ -201,3 +201,21 @@ form button {
     display: none;
   }
 }
+.contact-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background-color: #25D366; /* WhatsApp green */
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #1ebe57;
+  transform: scale(1.05);
+}
