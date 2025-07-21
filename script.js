@@ -1,29 +1,27 @@
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('nav-links');
-const searchBtn = document.getElementById('search-btn');
-const userBtn = document.getElementById('user-btn');
-const searchBar = document.getElementById('search-bar');
+const container = document.getElementById('products-container');
 
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
+function loadProducts() {
+  if (!Array.isArray(products)) {
+    console.error("Products list is missing or broken.");
+    return;
+  }
 
-searchBtn.addEventListener('click', () => {
-  searchBar.style.display = searchBar.style.display === 'block' ? 'none' : 'block';
-});
+  products.forEach(product => {
+    const card = document.createElement('a');
+    card.className = 'product-card';
+    card.href = product.link;
+    card.setAttribute('data-name', product.title);
 
-userBtn.addEventListener('click', () => {
-  alert('👤 Login/Register coming soon!');
-});
+    card.innerHTML = `
+      <picture>
+        <source srcset="images/${product.image}" type="image/webp">
+        <img src="images/${product.fallback}" loading="lazy" alt="${product.title}">
+      </picture>
+      <h3>${product.title}</h3>
+    `;
 
-// Simple Search Filter
-const searchInput = document.querySelector('#search-bar input');
-const productCards = document.querySelectorAll('.product-card');
-
-searchInput.addEventListener('input', () => {
-  const query = searchInput.value.toLowerCase().trim();
-  productCards.forEach(card => {
-    const name = card.getAttribute('data-name').toLowerCase();
-    card.style.display = name.includes(query) ? 'flex' : 'none';
+    container.appendChild(card);
   });
-});
+}
+
+document.addEventListener('DOMContentLoaded', loadProducts);
